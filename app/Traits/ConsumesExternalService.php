@@ -13,6 +13,9 @@ trait ConsumesExternalService
             'base_uri' => $this->baseUri,
         ]);
 
+        if(isset($this->secret)) {
+            $headers['Authorization'] = $this->secret;
+        }
         //$client->get('/', ['verify' => true]);
 
         //perform the request
